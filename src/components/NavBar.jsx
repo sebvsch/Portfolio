@@ -28,14 +28,14 @@ const NavBar = () => {
               <button className="text-sm font-medium text-white rounded-lg p-1.5 px-4 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff]"
                 onClick={() => setMostrarModal(true)}
               >Contacto</button>
-              <button
+              <a
                 href={CV}
                 download="Sebastian Chico - Front-end Developer"
                 rel="noreferrer"
                 target="_blank"
                 className="text-sm font-medium text-white rounded-lg p-1.5 px-4 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff]"
               >Descargar CV
-              </button>
+              </a>
               {
                 mostrarModal && (
                   <ModalContacto />

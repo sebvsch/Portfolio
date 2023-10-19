@@ -2,38 +2,66 @@ import { AppContext } from "../context/AppContext";
 import React, { useContext } from "react";
 
 function ModalContacto() {
+    const { setMostrarModal, handleSubmit } = useContext(AppContext);
 
-    const { setMostrarModal } = useContext(AppContext);
 
 
     return (
-
-        <div class="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
-            <div class="bg-white p-8 rounded flex flex-col justify-center items-center gap-6">
+        <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
+            <div className="bg-white p-8 rounded-[13px] flex flex-col justify-center items-center gap-6 shadow-lg ">
                 <div>
-                    <form>
-                        <h1 class="text-4xl font-bold mb-6">Contactame</h1>
-                        <label class="block mb-4">Nombre y apellido:</label>
-                        <input class="border rounded py-3 px-4 mb-4 w-full" type="text" />
-                        <label class="block mb-4">Celular:</label>
-                        <input class="border rounded py-3 px-4 mb-4 w-full" type="text" />
-                        <label class="block mb-4">Email:</label>
-                        <input class="border rounded py-3 px-4 mb-4 w-full" type="text" />
-                        <label class="block mb-4">Mensaje:</label>
-                        <textarea class="border rounded py-3 px-4 mb-4 resize-none w-full" rows="4"></textarea>
+                    <form onSubmit={handleSubmit} id="contactForm">
+                        <h1 className="text-4xl font-bold mb-10 px-[5em]">Contactame</h1>
+                        <label className="block mb-4 text-black/50">Nombre y apellido:</label>
+                        <input
+                            className="border rounded py-3 px-4 mb-4 w-full"
+                            type="text"
+                            name="nombreApellido"
+                            placeholder="Sebastian Andres Chico"
+                            required
+                        />
+                        <label className="block mb-4 text-black/50">Celular:</label>
+                        <input
+                            className="border rounded py-3 px-4 mb-4 w-full"
+                            type="text"
+                            name="celular"
+                            placeholder="(+00) 123-45-678"
+                            required
+                        />
+                        <label className="block mb-4 text-black/50">Email:</label>
+                        <input
+                            className="border rounded py-3 px-4 mb-4 w-full"
+                            type="email"
+                            name="email"
+                            placeholder="email@example.com"
+                            required
+                        />
+                        <label className="block mb-4 text-black/50">Mensaje:</label>
+                        <textarea
+                            className="border rounded py-3 px-4 mb-4 resize-none w-full"
+                            rows="4"
+                            name="mensaje"
+                            required
+                        ></textarea>
+                        <div className="flex justify-end items-center mt-4 gap-10">
+                            <button
+                                className="text-base font-medium text-blue-500 "
+                                onClick={() => setMostrarModal(false)}
+                            >
+                                Cerrar
+                            </button>
+                            <button
+                                className="text-base font-medium text-blue-500 "
+                                type="submit"
+                            >
+                                Enviar
+                            </button>
+                        </div>
                     </form>
-                    <div className='flex justify-end items-center mt-4'>
-                        <button className="text-sm font-medium text-white rounded-lg p-1.5 px-8 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff] mr-2"
-                        onClick={() => setMostrarModal(false)}
-                        >Cerrar</button>
-                        <button className="text-sm font-medium text-white rounded-lg p-1.5 px-8 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff]">Enviar</button>
-                    </div>
                 </div>
             </div>
         </div>
-
-
-    )
+    );
 }
 
-export default ModalContacto
+export default ModalContacto;
