@@ -11,7 +11,7 @@ function SobreMi() {
                     <h1 className='text-white font-bold text-5xl'>Sobre mí</h1>
                     <p className='text-white text-[20px]'>Tengo 22 años, soy de Cartagena de Indias, Colombia. Desde 2018 estudio Ing. de Sistemas en
                         <a href="https://tecnologicocomfenalco.edu.co/" target="_blank" className='text-blue-500 ease-in duration-300 hover:text-[#0cbeff]'> Fundación Universitaria Tecnológico Comfenalco</a>,
-                        tengo habilidad y conocimiento en el área del Diseño Gráfico/UI y he trabajado como Diseñador Freelancer por aproximadamente 6 años. 
+                        tengo habilidad y conocimiento en el área del Diseño Gráfico/UI y he trabajado como Diseñador Freelancer por aproximadamente 6 años.
                         <br />
                         <span className='text-[15px]'> Ver información completa en mis perfiles de
                             <a href="https://www.linkedin.com/in/sebastian-chico-80802625b/"
@@ -21,8 +21,12 @@ function SobreMi() {
                             <a href="https://www.behance.net/sebastianachico"
                                 target="_blank"
                                 className='text-blue-500 ease-in duration-300 hover:text-[#0cbeff]'> Behance
+                            </a>,
+                            <a href="https://www.github.com/sebvsch"
+                                target="_blank"
+                                className='text-blue-500 ease-in duration-300 hover:text-[#0cbeff]'> GitHub
                             </a>
-                            </span>
+                        </span>
                     </p>
                     <div className='mt-5'>
                         <h2 className='text-white font-semibold text-2xl inline'>Habilidades: </h2>

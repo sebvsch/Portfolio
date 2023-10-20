@@ -4,7 +4,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
 function ModalContacto() {
-    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, handleChange } = useContext(AppContext);
+    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber } = useContext(AppContext);
 
 
     return (
@@ -37,7 +37,7 @@ function ModalContacto() {
                             name="user_phone"
                             country={number}
                             placeholder="(+00) 12-345-67"
-                            onChange={(value) => { setNumber(value)}}
+                            onChange={(value) => { setNumber(value) }}
                             required
                         />
                         <label className="block mb-4 text-black/50">Email:</label>
