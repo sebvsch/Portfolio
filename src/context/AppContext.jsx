@@ -2,6 +2,7 @@ import React, { createContext, useState, useRef } from "react";
 import Swal from 'sweetalert2'
 import emailjs from '@emailjs/browser';
 
+
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
@@ -10,10 +11,11 @@ export const AppContextProvider = ({ children }) => {
 
     const [form, setForm] = useState({
         nombre: "",
-        celular: "",
         email: "",
         mensaje: ""
     })
+
+    const [number, setNumber] = useState("")
 
 
     const successAlert = () => {
@@ -40,15 +42,16 @@ export const AppContextProvider = ({ children }) => {
         successAlert();
         setForm({
             nombre: "",
-            celular: "",
             email: "",
             mensaje: ""
         });
-
     }
+    
 
     return (
         <AppContext.Provider value={{
+            number,
+            setNumber,
             enviarForm,
             handleForm,
             form,
