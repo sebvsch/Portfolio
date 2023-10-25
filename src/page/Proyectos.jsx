@@ -4,7 +4,9 @@ function Proyectos() {
 
     return (
 
-        <div>Proyectssssos</div>
+        <div className='text-white'>
+            <p className='text-4xl text-center'>Pendiente</p>
+        </div>
     )
 }
 

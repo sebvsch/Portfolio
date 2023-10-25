@@ -5,7 +5,7 @@ function Home() {
     return (
         <div className="flex items-center justify-center gap-[80px] mt-[20vh] text-focus-in">
             <div className='w-[44%]'>
-                <div className="flex gap-3 mb-2 inline">
+                <div className="flex gap-3 mb-2">
                     <h1 className='text-white text-7xl font-medium inline'>Hola a <span className='text-blue-500 font-bold'>Tod@s!</span></h1>
                     <img className='w-[70px] h-[70px] inline' src="./media/emojiMano.png" alt="" />
                 </div>

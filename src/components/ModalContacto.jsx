@@ -1,11 +1,10 @@
 import { AppContext } from "../context/AppContext";
 import React, { useContext } from "react";
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
 function ModalContacto() {
-    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber } = useContext(AppContext);
-
+    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, isValid, handleCloseModal } = useContext(AppContext);
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
@@ -22,7 +21,7 @@ function ModalContacto() {
                     >
                         <h1 className="text-4xl font-bold mb-10 px-[5em]">Contáctame</h1>
 
-                        <label className="block mb-4 text-black/50">Nombre y apellido:</label>
+                        <label className="block mb-4 text-black/50">Nombre y apellido:<span style={{ color: 'red' }}> *</span></label>
                         <input
                             className="border rounded py-3 px-4 mb-4 w-full"
                             value={form.nombre}
@@ -31,16 +30,18 @@ function ModalContacto() {
                             placeholder="Sebastian Andres Chico"
                             required
                         />
-                        <label className="block mb-4 text-black/50">Celular:</label>
-                        <PhoneInput
-                            className="border rounded py-3 px-4 mb-4 w-full"
-                            name="user_phone"
-                            country={number}
-                            placeholder="(+00) 12-345-67"
-                            onChange={(value) => { setNumber(value) }}
-                            required
-                        />
-                        <label className="block mb-4 text-black/50">Email:</label>
+                        <label className="block mb-4 text-black/50">Numero de contacto:<span style={{ color: 'red' }}> *</span></label>
+                        <div className="mb-4">
+                            <PhoneInput
+                                inputStyle={{ width: '100%' }}
+                                defaultCountry="co"
+                                value={number}
+                                onChange={(number) => setNumber(number)}
+                                name="user_phone"
+                                required
+                            />
+                        </div>
+                        <label className="block mb-4 text-black/50">Email:<span style={{ color: 'red' }}> *</span></label>
                         <input
                             className="border rounded py-3 px-4 mb-4 w-full"
                             value={form.email}
@@ -49,7 +50,7 @@ function ModalContacto() {
                             placeholder="email@example.com"
                             required
                         />
-                        <label className="block mb-4 text-black/50">Mensaje:</label>
+                        <label className="block mb-4 text-black/50">Mensaje:<span style={{ color: 'red' }}> *</span></label>
                         <textarea
                             className="border rounded py-3 px-4 mb-4 resize-none w-full"
                             value={form.mensaje}
@@ -59,20 +60,21 @@ function ModalContacto() {
                         ></textarea>
                         <div className="flex justify-center mt-6 gap-5">
                             <button
-                                className="text-base font-medium text-blue-500 bg-blue-500 text-white p-1.5 px-5 rounded-[20px] ease-in duration-300 hover:bg-[#0cbeff]"
+                                className="text-base font-medium bg-blue-500 text-white p-1.5 px-5 rounded-[20px] ease-in duration-300 hover:bg-[#0cbeff]"
                                 type="button"
-                                onClick={() => setMostrarModal(false)}
+                                onClick={handleCloseModal}
                             >
                                 Cerrar
                             </button>
                             <button
-                                className="text-base font-medium text-blue-500 bg-blue-500 text-white p-1.5 px-5 rounded-[20px] ease-in duration-300 hover:bg-[#0cbeff]"
+                                className={`text-base font-medium p-1.5 px-5 rounded-[20px] ease-in duration-300 ${isValid ? "bg-blue-500 text-white hover:bg-[#0cbeff]" : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                                    }`}
                                 type="submit"
+                                disabled={!isValid}
                             >
                                 Enviar
                             </button>
                         </div>
-
                     </form>
                 </div>
             </div>

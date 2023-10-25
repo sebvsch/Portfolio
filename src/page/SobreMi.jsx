@@ -34,7 +34,7 @@ function SobreMi() {
                         <MiniCard name="CSS" />
                         <MiniCard name="Javascript" />
                         <MiniCard name="Typescript" />
-                        <MiniCard name="React JS" />
+                        <MiniCard name="React" />
                         <MiniCard name="Bootstrap" />
                         <MiniCard name="Tailwind CSS" />
                         <MiniCard name="Git & GitHub" />
