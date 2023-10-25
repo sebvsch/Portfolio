@@ -6,6 +6,8 @@ import { PhoneNumberUtil } from 'google-libphonenumber';
 
 export const AppContext = createContext();
 
+//Validacion del Numero Telefonico
+
 const phoneUtil = PhoneNumberUtil.getInstance();
 
 const isPhoneValid = (number) => {
@@ -25,7 +27,9 @@ export const AppContextProvider = ({ children }) => {
         email: "",
         mensaje: ""
     })
-    
+
+    //Validacion del Numero Telefonico
+
     const isValid = isPhoneValid(number);
 
     const successAlert = () => {
@@ -54,7 +58,7 @@ export const AppContextProvider = ({ children }) => {
             nombre: "",
             email: "",
             mensaje: ""
-            
+
         });
     }
 
@@ -62,6 +66,10 @@ export const AppContextProvider = ({ children }) => {
         setNumber('');
         setMostrarModal(false);
     };
+
+    const handleEnviarModal = () => {
+        setNumber('');
+    }
 
 
     return (
@@ -77,6 +85,7 @@ export const AppContextProvider = ({ children }) => {
             handleSubmit,
             isValid,
             handleCloseModal,
+            handleEnviarModal
         }}>
             {children}
         </AppContext.Provider>
