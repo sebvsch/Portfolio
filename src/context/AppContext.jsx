@@ -60,16 +60,14 @@ export const AppContextProvider = ({ children }) => {
             mensaje: ""
 
         });
+
+        setNumber("")
     }
 
     const handleCloseModal = () => {
         setNumber('');
         setMostrarModal(false);
     };
-
-    const handleEnviarModal = () => {
-        setNumber('');
-    }
 
 
     return (
@@ -85,7 +83,6 @@ export const AppContextProvider = ({ children }) => {
             handleSubmit,
             isValid,
             handleCloseModal,
-            handleEnviarModal
         }}>
             {children}
         </AppContext.Provider>
