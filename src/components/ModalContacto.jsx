@@ -1,13 +1,13 @@
 import { AppContext } from "../context/AppContext";
 import React, { useContext } from "react";
-import { PhoneInput } from 'react-international-phone';
-import 'react-international-phone/style.css';
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 function ModalContacto() {
     const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, isValid, handleCloseModal } = useContext(AppContext);
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
+        <div className="modalContacto fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
             <div className="bg-white p-8 rounded-[13px] flex flex-col justify-center items-center gap-6 shadow-lg">
                 <div>
                     <form
@@ -32,13 +32,15 @@ function ModalContacto() {
                         <label className="block mb-4 text-black/50">Numero de contacto:<span style={{ color: 'red' }}> *</span></label>
                         <div className="mb-4">
                             <PhoneInput
-                                inputStyle={{ width: '100%' }}
+                                placeholder="+00 123 4567 890"
+                                className="border rounded py-3 px-4 w-full"
                                 value={number}
-                                onChange={(number) => setNumber(number)}
+                                onChange={setNumber}
                                 name="user_phone"
+
                                 required
                             />
-                            {!isValid && number.length > 4 && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span title="Verifique que su numero este escrito correctamente" className="material-symbols-outlined text-[9px] cursor-pointer">help</span></div>}
+                            {!isValid &&  <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span title="Verifique que su numero este escrito correctamente" className="material-symbols-outlined text-[9px] cursor-pointer">help</span></div>}
                         </div>
                         <label className="block mb-4 text-black/50">Email:<span style={{ color: 'red' }}> *</span></label>
                         <input

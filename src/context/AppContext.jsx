@@ -21,6 +21,7 @@ const isPhoneValid = (number) => {
 export const AppContextProvider = ({ children }) => {
 
     const [mostrarModal, setMostrarModal] = useState(false)
+    const [showButtons, setShowButtons] = useState(false);
     const [number, setNumber] = useState("")
     const [form, setForm] = useState({
         nombre: "",
@@ -83,6 +84,8 @@ export const AppContextProvider = ({ children }) => {
             handleSubmit,
             isValid,
             handleCloseModal,
+            showButtons,
+            setShowButtons,
         }}>
             {children}
         </AppContext.Provider>
