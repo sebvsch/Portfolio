@@ -39,7 +39,7 @@ function ModalContacto() {
                                 name="user_phone"
                                 required
                             />
-                            {!isValid &&  <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span title="Verifique que su numero este escrito correctamente" className="material-symbols-outlined text-[9px] cursor-pointer">help</span></div>}
+                            {!isValid && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span title="Verifique que su numero este escrito correctamente" className="material-symbols-outlined text-[9px] cursor-pointer">help</span></div>}
                         </div>
                         <label className="block mb-4 text-black/50">Email:<span style={{ color: 'red' }}> *</span></label>
                         <input
