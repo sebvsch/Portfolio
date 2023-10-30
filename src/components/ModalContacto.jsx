@@ -25,7 +25,6 @@ function ModalContacto() {
                             className="border rounded py-3 px-4 mb-4 w-full"
                             value={form.nombre}
                             name="user_name"
-                            onChange={handleForm}
                             type="text"
                             placeholder="Sebastian Andres Chico"
                             required
@@ -47,7 +46,6 @@ function ModalContacto() {
                             className="border rounded py-3 px-4 mb-4 w-full"
                             value={form.email}
                             name="user_email"
-                            onChange={handleForm}
                             type="email"
                             placeholder="email@example.com"
                             required
@@ -57,7 +55,6 @@ function ModalContacto() {
                             className="border rounded py-3 px-4 mb-4 resize-none w-full"
                             value={form.mensaje}
                             name="message"
-                            onChange={handleForm}
                             rows="4"
                             required
                         ></textarea>
