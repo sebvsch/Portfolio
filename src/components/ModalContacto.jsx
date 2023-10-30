@@ -25,6 +25,7 @@ function ModalContacto() {
                             className="border rounded py-3 px-4 mb-4 w-full"
                             value={form.nombre}
                             name="user_name"
+                            onChange={handleForm}
                             type="text"
                             placeholder="Sebastian Andres Chico"
                             required
@@ -37,7 +38,6 @@ function ModalContacto() {
                                 value={number}
                                 onChange={setNumber}
                                 name="user_phone"
-
                                 required
                             />
                             {!isValid &&  <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span title="Verifique que su numero este escrito correctamente" className="material-symbols-outlined text-[9px] cursor-pointer">help</span></div>}
@@ -47,6 +47,7 @@ function ModalContacto() {
                             className="border rounded py-3 px-4 mb-4 w-full"
                             value={form.email}
                             name="user_email"
+                            onChange={handleForm}
                             type="email"
                             placeholder="email@example.com"
                             required
@@ -56,6 +57,7 @@ function ModalContacto() {
                             className="border rounded py-3 px-4 mb-4 resize-none w-full"
                             value={form.mensaje}
                             name="message"
+                            onChange={handleForm}
                             rows="4"
                             required
                         ></textarea>
