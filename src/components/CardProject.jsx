@@ -5,6 +5,7 @@ function CardProject({ imagen, titulo, descripcion, linkRepo, linkDeploy }) {
     return (
 
         <div className="w-[20%] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            
             <img className="rounded-t-lg h-60 w-96" src={imagen} alt="" />
             <div className="p-5">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{titulo}</h5>

@@ -8,8 +8,8 @@ function ModalContacto() {
     const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, isValid, handleCloseModal, MostrarModalValidacion, setMostrarModalValidacion } = useContext(AppContext);
 
     return (
-        <div className="modalContacto fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
-            <div className="bg-white p-8 rounded-[13px] flex flex-col justify-center items-center gap-6 shadow-lg">
+        <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
+            <div className="bg-white p-8 rounded-[13px] justify-center items-center shadow-lg">
                 <div>
                     <form
                         ref={enviarForm}
