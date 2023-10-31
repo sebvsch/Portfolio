@@ -2,9 +2,10 @@ import { AppContext } from "../context/AppContext";
 import React, { useContext } from "react";
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
+import ModalValidacion from "./ModalValidacion";
 
 function ModalContacto() {
-    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, isValid, handleCloseModal } = useContext(AppContext);
+    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, isValid, handleCloseModal, MostrarModalValidacion, setMostrarModalValidacion } = useContext(AppContext);
 
     return (
         <div className="modalContacto fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
@@ -39,7 +40,7 @@ function ModalContacto() {
                                 name="user_phone"
                                 required
                             />
-                            {!isValid && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span title="Verifique que su numero este escrito correctamente" className="material-symbols-outlined text-[9px] cursor-pointer">help</span></div>}
+                            {!isValid && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span onClick={() => setMostrarModalValidacion(true)} className="material-symbols-outlined text-[13px] cursor-pointer mt-[2px]">help</span></div>}
                         </div>
                         <label className="block mb-4 text-black/50">Email:<span style={{ color: 'red' }}> *</span></label>
                         <input
@@ -76,6 +77,11 @@ function ModalContacto() {
                             </button>
                         </div>
                     </form>
+                            {
+                                MostrarModalValidacion && (
+                                    <ModalValidacion />
+                                )
+                            }
                 </div>
             </div>
         </div>
