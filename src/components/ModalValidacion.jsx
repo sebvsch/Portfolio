@@ -8,7 +8,7 @@ function ModalValidacion() {
 
     return (
 
-        <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-[1px] flex justify-center items-center">
+        <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-[1px] flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg justify-center items-center shadow-sm">
                 <div className='w-96'>
                     <div className='flex items-center mb-2'>

@@ -24,7 +24,7 @@ function ModalContacto() {
                         <label className="block mb-4 text-black/50">Nombre y apellido:<span style={{ color: 'red' }}> *</span></label>
                         <input
                             className="border rounded py-3 px-4 mb-4 w-full"
-                            value={form.nombre}
+                            defaultValue={form.nombre}
                             name="user_name"
                             type="text"
                             placeholder="Sebastian Andres Chico"
@@ -40,12 +40,12 @@ function ModalContacto() {
                                 name="user_phone"
                                 required
                             />
-                            {!isValid && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span onClick={() => setMostrarModalValidacion(true)} className="material-symbols-outlined text-[13px] cursor-pointer mt-[2px]">help</span></div>}
+                            {!isValid && number && number.length > 1 && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span onClick={() => setMostrarModalValidacion(true)} className="material-symbols-outlined text-[13px] cursor-pointer mt-[2px]">help</span></div>}
                         </div>
                         <label className="block mb-4 text-black/50">Email:<span style={{ color: 'red' }}> *</span></label>
                         <input
                             className="border rounded py-3 px-4 mb-4 w-full"
-                            value={form.email}
+                            defaultValue={form.email}
                             name="user_email"
                             type="email"
                             placeholder="email@example.com"
@@ -54,7 +54,7 @@ function ModalContacto() {
                         <label className="block mb-4 text-black/50">Mensaje:<span style={{ color: 'red' }}> *</span></label>
                         <textarea
                             className="border rounded py-3 px-4 mb-4 resize-none w-full"
-                            value={form.mensaje}
+                            defaultValue={form.mensaje}
                             name="message"
                             rows="4"
                             required
@@ -77,11 +77,11 @@ function ModalContacto() {
                             </button>
                         </div>
                     </form>
-                            {
-                                MostrarModalValidacion && (
-                                    <ModalValidacion />
-                                )
-                            }
+                    {
+                        MostrarModalValidacion && (
+                            <ModalValidacion />
+                        )
+                    }
                 </div>
             </div>
         </div>
