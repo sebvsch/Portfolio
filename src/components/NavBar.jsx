@@ -1,7 +1,7 @@
 import CV from "../assets/CV.pdf";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModalContacto from "./ModalContacto";
 
 
@@ -18,9 +18,6 @@ const NavBar = () => {
             <div className="flex flex-col gap-6 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
               <Link to='/sobremi' className="flex items-center text-sm font-medium text-white ease-in duration-300 hover:text-[#0cbeff]" >
                 Sobre mí
-              </Link>
-              <Link to='/habilidades' className="flex items-center text-sm font-medium text-white ease-in duration-300 hover:text-[#0cbeff]" >
-                Habilidades
               </Link>
               <Link to='/proyectos' className="flex items-center text-sm font-medium text-white ease-in duration-300 hover:text-[#0cbeff]" >
                 Proyectos
