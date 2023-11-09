@@ -1,7 +1,7 @@
 import CV from "../assets/CV.pdf";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import ModalContacto from "./ModalContacto";
 
 
