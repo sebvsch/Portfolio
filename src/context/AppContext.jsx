@@ -39,10 +39,24 @@ export const AppContextProvider = ({ children }) => {
             timer: 2200
         });
     }
+    
+    
+    const errorAlert = () => {
+        Swal.fire({
+            title: 'Error',
+            text: 'Su mensaje no ha podido ser enviado, por favor intente mas tarde',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 2200
+        });
+    }
+
+
 
     const handleForm = (e) => {
         setForm(e.target.value)
     }
+
 
     const enviarForm = useRef();
 
@@ -50,8 +64,12 @@ export const AppContextProvider = ({ children }) => {
         e.preventDefault();
 
         emailjs.sendForm('service_a8vs3xg', 'template_3me1ol6', enviarForm.current, 'SoC0OlJj2_DXiyOQG')
+            .then(() => {
+                successAlert();
+            }, () => {
+                errorAlert();
+            });
 
-        successAlert();
         setForm({
             nombre: "",
             email: "",
