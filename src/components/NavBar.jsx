@@ -1,7 +1,7 @@
 import CV from "../assets/CV.pdf";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModalContacto from "./ModalContacto";
 
 
@@ -19,7 +19,7 @@ const NavBar = () => {
             <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
             </div>
-          <div className="hs-collapse overflow-hidden transition-all duration-300 basis-full block">
+          <div className="hs-collapse overflow-hidden transition-all duration-300 basis-full block max-sm:hidden max-md:hidden">
             <div className="flex gap-6  flex-row items-center justify-end mt-0 pl-5">
               <Link to='/sobremi' className="flex items-center text-sm font-medium text-white ease-in duration-300 hover:text-[#0cbeff] active:text-[#0cbeff]" >
                 Sobre mí
@@ -38,13 +38,13 @@ const NavBar = () => {
                 className="text-sm font-medium text-white rounded-lg p-1.5 px-4 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff] active:bg-[#0cbeff]"
               >Descargar CV
               </a>
+            </div>
+          </div>
               {
                 mostrarModal && (
                   <ModalContacto />
                 )
               }
-            </div>
-          </div>
           {/* <div className="flex gap-3 ml-4">
             <a href="https://www.github.com/sebvsch" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 496 512" className="text-lg">
