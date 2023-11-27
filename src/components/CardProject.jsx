@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CardProject({ imagen, titulo, descripcion, linkRepo, linkDeploy }) {
+function CardProject({ imagen, titulo, descripcion, linkRepo, linkDeploy, mostrarDeploy }) {
 
     return (
 
@@ -18,9 +18,11 @@ function CardProject({ imagen, titulo, descripcion, linkRepo, linkDeploy }) {
                         Repo
                     </a>
 
-                    <a href={linkDeploy} target="_blank" className="text-sm font-medium text-white rounded-lg p-1.5 px-4 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff] active:bg-[#0cbeff]">
-                        Demo
-                    </a>
+                    {mostrarDeploy && (
+                        <a href={linkDeploy} target="_blank" className="text-sm font-medium text-white rounded-lg p-1.5 px-4 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff] active:bg-[#0cbeff]">
+                            Demo
+                        </a>
+                    )}
 
                 </div>
             </div>

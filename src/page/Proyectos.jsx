@@ -21,6 +21,7 @@ function Proyectos() {
                     }
                     linkRepo="https://github.com/sebvsch/CRUDListReactTS"
                     linkDeploy="https://tu-demo.com"
+                    mostrarDeploy={false}
                 />
 
                 <CardProject
@@ -37,6 +38,7 @@ function Proyectos() {
                     }
                     linkRepo="https://github.com/sebvsch/pokeDex"
                     linkDeploy="https://tu-demo.com"
+                    mostrarDeploy={false}
                 />
             </div>
         </>
