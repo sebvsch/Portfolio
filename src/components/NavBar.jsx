@@ -1,7 +1,7 @@
 import CV from "../assets/CV.pdf";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ModalContacto from "./ModalContacto";
 import { createPortal } from "react-dom";
 
@@ -17,28 +17,28 @@ const NavBar = () => {
           <Link to='/' className="flex-none text-[30px] font-normal text-white ease-in duration-300 hover:text-[#0cbeff] active:text-[#0cbeff]" href="#">Sebastián A. Chico</Link>
           <div className="text-white md:hidden active:text-[#0cbeff] ease-in">
             <button onClick={() => setOpen(true)}>
-              <span class="material-symbols-outlined text-3xl">menu</span>
+              <span className="material-symbols-outlined text-3xl">menu</span>
             </button>
             {open &&
               createPortal(
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-10 md:hidden">
                   <div className="absolute top-0 left-0 right-0 p-5 bg-white rounded-b-lg font-semibold text-slate-700">
                     <div className="text-end">
-                      <button onClick={() => setOpen(false)}><span class="material-symbols-outlined text-4xl active:text-blue-500">close</span></button>
+                      <button onClick={() => setOpen(false)}><span className="material-symbols-outlined text-4xl active:text-blue-500">close</span></button>
                     </div>
                     <div className="text-xl text-center">
                       
                       <div className="active:bg-blue-500 active:text-white py-3">
-                        <Link to="/sobremi" onClick={() => setOpen(false)}>{'Sobre mí'.toUpperCase()}</Link>
+                        <Link to="/sobremi" onClick={() => setOpen(false)}>Sobre mí</Link>
                       </div>
 
                       <div className="active:bg-blue-500 active:text-white py-3">
-                        <Link to="/proyectos" onClick={() => setOpen(false)}>{'Proyectos'.toUpperCase()}</Link>
+                        <Link to="/proyectos" onClick={() => setOpen(false)}>Proyectos</Link>
                       </div>
 
                       <div className="text-blue-500 active:bg-blue-500 active:text-white py-3">
                         <button onClick={() => { setMostrarModal(true), setOpen(false) }}
-                        >{'Contacto'.toUpperCase()}</button>
+                        >Contacto</button>
                       </div>
 
                       <div className="text-blue-500 active:bg-blue-500 active:text-white py-3">
@@ -47,7 +47,7 @@ const NavBar = () => {
                           download="Sebastian Chico - Front-end Developer"
                           rel="noreferrer"
                           target="_blank"
-                        >{'Descargar CV'.toUpperCase()}
+                        >Descargar CV
                         </a>
                       </div>
 

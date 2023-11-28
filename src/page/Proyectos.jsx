@@ -1,5 +1,6 @@
 import React from 'react';
 import CardProject from '../components/CardProject';
+import imgToDo from '/media/imgToDo.png'
 
 function Proyectos() {
 
@@ -8,7 +9,7 @@ function Proyectos() {
             <div className="flex flex-wrap gap-5 justify-center items-center mt-16 mb-[5%]">
 
                 <CardProject
-                    imagen="https://budibase.com/blog/crud-app/images/read.webp"
+                    imagen={imgToDo}
                     titulo="To Do List"
                     descripcion={
                         <span>
@@ -22,6 +23,7 @@ function Proyectos() {
                     linkRepo="https://github.com/sebvsch/CRUDListReactTS"
                     linkDeploy="https://tu-demo.com"
                     mostrarDeploy={false}
+                    estado="Terminado"
                 />
 
                 <CardProject
@@ -39,6 +41,7 @@ function Proyectos() {
                     linkRepo="https://github.com/sebvsch/pokeDex"
                     linkDeploy="https://tu-demo.com"
                     mostrarDeploy={false}
+                    estado="Pausado"
                 />
             </div>
         </>
