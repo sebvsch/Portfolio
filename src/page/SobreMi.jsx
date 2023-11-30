@@ -5,7 +5,7 @@ function SobreMi() {
 
     return (
         <>
-            <div className='flex items-center justify-center mt-[30vh] max-sm:mt-[10vh] max-md:mt-[10vh] max-lg:mt-[10vh]'>
+            <div className='flex items-center justify-center mt-[30vh] max-sm:mt-[8vh] max-md:mt-[10vh] max-lg:mt-[10vh]'>
 
                 <div className='w-[60%]'>
                     <h1 className='text-white font-bold text-5xl max-sm:text-4xl'>Sobre mí</h1>

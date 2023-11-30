@@ -41,7 +41,7 @@ function Proyectos() {
                     linkRepo="https://github.com/sebvsch/pokeDex"
                     linkDeploy="https://tu-demo.com"
                     mostrarDeploy={false}
-                    estado="Pausado"
+                    estado="En Pausa"
                 />
             </div>
         </>
