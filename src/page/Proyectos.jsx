@@ -43,6 +43,24 @@ function Proyectos() {
                     mostrarDeploy={false}
                     estado="En Pausa"
                 />
+
+                <CardProject
+                    imagen="https://webdesigncusco.com/wp-content/uploads/2023/02/pocketbase-app.png"
+                    titulo="Login and Register Validation"
+                    descripcion={
+                        <span>
+                            Una pequeña pagina que contiene un Login y un Register, donde los usuarios y se guardan y se autentican en la base de datos
+                            <a href="https://pocketbase.io/" target="_blank" rel="noopener noreferrer">
+                                <strong className='text-blue-500 ease-in duration-300 hover:text-[#0cbeff] active:text-[#0cbeff]'> PocketBase</strong>
+                            </a>
+                            . Realizada con React, Typescript, Tailwind CSS.
+                        </span>
+                    }
+                    linkRepo="https://github.com/sebvsch/AuthLogin"
+                    linkDeploy="https://tu-demo.com"
+                    mostrarDeploy={false}
+                    estado="En Proceso"
+                />
             </div>
         </>
     );
