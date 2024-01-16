@@ -8,7 +8,7 @@ function CardProject({ imagen, titulo, descripcion, linkRepo, linkDeploy, mostra
     } else if (estado === 'En Pausa') {
         estadoColor = 'bg-red-500';
     } else if (estado === 'En Proceso') {
-        estadoColor = 'bg-yellow-500 animate-pulse';
+        estadoColor = 'bg-yellow-500';
     }
 
     return (
