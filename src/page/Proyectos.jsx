@@ -27,24 +27,6 @@ function Proyectos() {
                 />
 
                 <CardProject
-                    imagen="https://cdn.dribbble.com/users/1171520/screenshots/6545819/dribbble.png?resize=400x0"
-                    titulo="Pokedex"
-                    descripcion={
-                        <span>
-                            Pokedex que contiene filtrado, detalle de cada Pokemon. Consumo de la API,
-                            <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">
-                                <strong className='text-[#ffc04b] ease-in duration-300 hover:text-[#ffed4b] active:text-[#ffed4b]'> PokeAPI</strong>
-                            </a>
-                            . Realizada con React, Typescript, Tailwind CSS.
-                        </span>
-                    }
-                    linkRepo="https://github.com/sebvsch/pokeDex"
-                    linkDeploy="https://tu-demo.com"
-                    mostrarDeploy={false}
-                    estado="En Pausa"
-                />
-
-                <CardProject
                     imagen="https://webdesigncusco.com/wp-content/uploads/2023/02/pocketbase-app.png"
                     titulo="Login and Register Validation"
                     descripcion={
