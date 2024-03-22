@@ -41,7 +41,7 @@ function Proyectos() {
                     linkRepo="https://github.com/sebvsch/AuthLogin"
                     linkDeploy="https://tu-demo.com"
                     mostrarDeploy={false}
-                    estado="En Proceso"
+                    estado="En Pausa"
                 />
             </div>
         </>
