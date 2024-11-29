@@ -1,6 +1,7 @@
 import React from 'react';
 import CardProject from '../components/CardProject';
 import imgToDo from '/media/imgToDo.png'
+import GestorAuth from '/media/gestorauth.png'
 
 function Proyectos() {
 
@@ -42,6 +43,21 @@ function Proyectos() {
                     linkDeploy="https://tu-demo.com"
                     mostrarDeploy={false}
                     estado="En Pausa"
+                />
+
+                <CardProject
+                    imagen={GestorAuth}
+                    titulo="Gestor Administrativo"
+                    descripcion={
+                        <span>
+                            Web que sirve como un gestor administrativo, realizado con React, Typescript, Tailwind CSS, NextUI; Web Api creada con C# ASP .NET Core, EF,
+                            y base de datos con SQL Server
+                        </span>
+                    }
+                    linkRepo="https://github.com/sebvsch/GestorAuth"
+                    linkDeploy="https://tu-demo.com"
+                    mostrarDeploy={false}
+                    estado="En Proceso"
                 />
             </div>
         </>

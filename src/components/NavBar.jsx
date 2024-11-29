@@ -1,4 +1,4 @@
-import CV from "../assets/CV.pdf";
+import CV from "../assets/CV - Sebastian Chico.pdf";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import React, { useContext, useState } from "react";
@@ -27,7 +27,7 @@ const NavBar = () => {
                       <button onClick={() => setOpen(false)}><span className="material-symbols-outlined text-4xl active:text-blue-500">close</span></button>
                     </div>
                     <div className="text-xl text-center">
-                      
+
                       <div className="active:bg-blue-500 active:text-white py-3">
                         <Link to="/sobremi" onClick={() => setOpen(false)}>Sobre mí</Link>
                       </div>
