@@ -1,6 +1,16 @@
-import React from 'react';
+import { FC } from 'react';
 
-function CardProject({ imagen, titulo, descripcion, linkRepo, linkDeploy, mostrarDeploy, estado }) {
+type CardProjectProps = {
+    imagen: any;
+    titulo: string;
+    descripcion: string;
+    linkRepo: string;
+    linkDeploy: string;
+    mostrarDeploy: string;
+    estado: string;
+}
+
+const CardProject: FC<CardProjectProps> = ({ imagen, titulo, descripcion, linkRepo, linkDeploy, mostrarDeploy, estado }) => {
 
     let estadoColor;
     if (estado === 'Terminado') {

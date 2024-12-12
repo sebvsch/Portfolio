@@ -1,13 +1,13 @@
-import React from "react";
+import { FC } from "react";
 
-function Home() {
+const Home: FC = () => {
     return (
         <div className="flex flex-col items-center">
             <div className="w-3/4 max-w-6xl mx-auto mt-20 px-4 lg:flex lg:items-center lg:mt-[24vh]">
                 <div className="lg:w-full lg:pr-8 mb-7">
                     <h1 className="text-center lg:text-start text-5xl text-white font-medium lg:text-5xl">
                         Hola a {" "}
-                        <span className="text-blue-500 font-bold inline-flex items-center">
+                        <span className="text-orange-600 font-bold inline-flex items-center">
                             Tod@s!
                             <div className="inline-block w-12 lg:w-14 ml-3">
                                 <img
@@ -60,4 +60,4 @@ function Home() {
     );
 }
 
-export default Home;
+export { Home };

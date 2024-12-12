@@ -1,7 +1,7 @@
-import React from "react";
-import MiniCard from "../components/MiniCard";
+import { FC } from "react";
+import { MiniCard } from "../components/MiniCard";
 
-function SobreMi() {
+const SobreMi: FC = () => {
   return (
     <>
       <div className="flex items-center justify-center mt-[30vh] max-sm:mt-[8vh] max-md:mt-[10vh] max-lg:mt-[10vh]">
@@ -58,23 +58,23 @@ function SobreMi() {
             <h2 className="text-white font-semibold text-2xl inline">
               Habilidades:{" "}
             </h2>
-            <MiniCard name="HTML5" />
-            <MiniCard name="CSS" />
-            <MiniCard name="Javascript" />
-            <MiniCard name="Typescript" />
-            <MiniCard name="React" />
-            <MiniCard name="Bootstrap" />
-            <MiniCard name="Tailwind CSS" />
-            <MiniCard name="Git & GitHub" />
+            <MiniCard nombre="HTML5" />
+            <MiniCard nombre="CSS" />
+            <MiniCard nombre="Javascript" />
+            <MiniCard nombre="Typescript" />
+            <MiniCard nombre="React" />
+            <MiniCard nombre="Bootstrap" />
+            <MiniCard nombre="Tailwind CSS" />
+            <MiniCard nombre="Git & GitHub" />
           </div>
           <div className="mt-5">
             <h2 className="text-white font-semibold text-2xl inline">
               Software:{" "}
             </h2>
-            <MiniCard name="Visual Studio Code" />
-            <MiniCard name="Adobe Photoshop" />
-            <MiniCard name="Adobe Illustrator" />
-            <MiniCard name="Figma" />
+            <MiniCard nombre="Visual Studio Code" />
+            <MiniCard nombre="Adobe Photoshop" />
+            <MiniCard nombre="Adobe Illustrator" />
+            <MiniCard nombre="Figma" />
           </div>
         </div>
       </div>
@@ -82,4 +82,4 @@ function SobreMi() {
   );
 }
 
-export default SobreMi;
+export { SobreMi };
