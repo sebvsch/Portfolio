@@ -13,6 +13,7 @@ const MasProyectos: FC = () => {
                         titulo="LISTA TAREAS"
                         descripcion={`Crud "To do List" que permite Agregar, Editar y Eliminar tareas, almacenándolas con PocketBase como BackEnd.`}
                         linkRepo="https://github.com/sebvsch/CRUDListReactTS"
+                        linkDeploy="https://crud-list-tareas.vercel.app/"
                     />
                     <CardProject
                         imagen="https://webdesigncusco.com/wp-content/uploads/2023/02/pocketbase-app.png"

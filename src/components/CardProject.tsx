@@ -5,9 +5,10 @@ type CardProjectProps = {
     titulo: string;
     descripcion: string;
     linkRepo: string;
+    linkDeploy?: string;
 }
 
-const CardProject: FC<CardProjectProps> = ({ imagen, titulo, descripcion, linkRepo }) => {
+const CardProject: FC<CardProjectProps> = ({ imagen, titulo, descripcion, linkRepo, linkDeploy }) => {
     return (
         <div className="border border-white/10 rounded-2xl w-[340px]">
             <div className="p-5 bg-white/5 rounded-2xl">
@@ -36,12 +37,16 @@ const CardProject: FC<CardProjectProps> = ({ imagen, titulo, descripcion, linkRe
                                 </div>
                             </button>
                         </a>
-                        <button>
-                            <div className='bg-orange-500 hover:bg-orange-600 ease-in duration-200 px-3 py-1 rounded-full'>
-                                <i className="fa-solid fa-laptop mr-1 text-white"></i>
-                                <span className="text-white text-sm font-medium">Deploy</span>
-                            </div>
-                        </button>
+                        {linkDeploy && (
+                            <a href={linkDeploy} target="_blank" rel="noopener noreferrer">
+                                <button>
+                                    <div className='bg-orange-500 hover:bg-orange-600 ease-in duration-200 px-3 py-1 rounded-full'>
+                                        <i className="fa-solid fa-laptop mr-1 text-white"></i>
+                                        <span className="text-white text-sm font-medium">Deploy</span>
+                                    </div>
+                                </button>
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
