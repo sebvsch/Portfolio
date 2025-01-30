@@ -66,7 +66,7 @@ const Proyectos: FC = () => {
                                 </div>
                             </div>
                             <div className="flex gap-2 mt-2">
-                                <img className="rounded-lg shadow-xl" src="../../public/media/gestor.png" alt="" />
+                                <img className="rounded-lg shadow-xl" src="/media/gestor.png" alt="" />
                             </div>
                         </div>
                         <div className="mt-2">
