@@ -1,54 +1,52 @@
 import { FC } from 'react';
 
 type CardProjectProps = {
-    imagen: any;
+    imagen: string;
     titulo: string;
     descripcion: string;
     linkRepo: string;
-    linkDeploy: string;
-    mostrarDeploy: string;
-    estado: string;
 }
 
-const CardProject: FC<CardProjectProps> = ({ imagen, titulo, descripcion, linkRepo, linkDeploy, mostrarDeploy, estado }) => {
-
-    let estadoColor;
-    if (estado === 'Terminado') {
-        estadoColor = 'bg-green-500';
-    } else if (estado === 'En Pausa') {
-        estadoColor = 'bg-red-500';
-    } else if (estado === 'En Proceso') {
-        estadoColor = 'bg-yellow-500';
-    }
-
+const CardProject: FC<CardProjectProps> = ({ imagen, titulo, descripcion, linkRepo }) => {
     return (
-        <div className="w-full p-2 sm:w-80">
-            <div className="border rounded-lg shadow bg-gray-800 border-gray-700">
-                <img className="rounded-t-lg w-full h-24 sm:h-32 md:h-40 object-cover" src={imagen} alt={descripcion} />
-                <div className="p-3 flex justify-between">
+        <div className="border border-white/10 rounded-2xl w-[340px]">
+            <div className="p-5 bg-white/5 rounded-2xl">
+                <div className="flex justify-between">
                     <div>
-                        <h5 className="mb-1 text-sm sm:text-base font-bold tracking-tight text-white">{titulo}</h5>
-                        <p className="mb-5 text-xs sm:text-sm font-normal text-gray-400">{descripcion}</p>
-                        <div className="flex items-center">
-                            <span className={`w-3 h-3 rounded-full ${estadoColor}`}></span>
-                            <span className="text-gray-300 text-sm ml-2 font-bold">{estado}</span>
-                        </div>
+                        <h5 className="mb-1 text-xl font-semibold text-white">
+                            {titulo}
+                        </h5>
+                        <p className="mb-2 text-sm w-[300px] font-normal text-gray-400">
+                            {descripcion}
+                        </p>
                     </div>
                 </div>
-                <div className="space-x-2 mt-2 text-center mb-3">
-                    <a href={linkRepo} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-medium text-white rounded-lg p-1 px-2 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff] active:bg-[#0cbeff]">
-                        Repo
-                    </a>
-
-                    {mostrarDeploy && (
-                        <a href={linkDeploy} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-medium text-white rounded-lg p-1 px-2 bg-blue-500 ease-in duration-300 hover:bg-[#0cbeff] active:bg-[#0cbeff]">
-                            Demo
+                <div className="relative w-[300px] h-[300px] overflow-hidden rounded-xl">
+                    <img
+                        className="w-full h-full object-cover"
+                        src={imagen}
+                        alt={descripcion}
+                    />
+                    <div className="absolute inset-0 flex justify-center items-end p-4 gap-3">
+                        <a href={linkRepo} target="_blank" rel="noopener noreferrer">
+                            <button>
+                                <div className='bg-slate-500 hover:bg-slate-700 ease-in duration-200 px-3 py-1 rounded-full'>
+                                    <i className="fa-brands fa-github mr-1 text-white"></i>
+                                    <span className="text-white text-sm font-medium">Repo</span>
+                                </div>
+                            </button>
                         </a>
-                    )}
+                        <button>
+                            <div className='bg-orange-500 hover:bg-orange-600 ease-in duration-200 px-3 py-1 rounded-full'>
+                                <i className="fa-solid fa-laptop mr-1 text-white"></i>
+                                <span className="text-white text-sm font-medium">Deploy</span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     );
-}
+};
 
-export default CardProject;
+export { CardProject };

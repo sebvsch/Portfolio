@@ -1,16 +1,21 @@
 import { FC } from 'react'
 
 type MiniCardProps = {
+    icon: string;
     nombre: string;
+    url: string;
+    color: string;
 }
 
-const MiniCard: FC<MiniCardProps> = ({ nombre }) => {
+const MiniCard: FC<MiniCardProps> = ({ nombre, icon, url, color }) => {
 
     return (
-
-        <div className='mr-[3px] mb-[3px] text-[16px] font-medium text-white rounded-lg p-1 px-3 border flex justify-center items-center bg-white/10 ease-in duration-200 hover:border-blue-500 max-sm:text-[13px]' style={{ display: 'inline-block' }}>
-            {nombre}
-        </div>
+        <a href={url} target="_blank" title='⚠ Se direccionara a otra pagina'>
+            <div className={`bg-white/10 hover:bg-white/20 ease-in duration-150 items-center justify-center inline-flex rounded-lg ${color} px-3 py-2 gap-1`}>
+                <i className={icon}></i>
+                <span className='font-medium'>{nombre}</span>
+            </div>
+        </a>
     )
 }
 

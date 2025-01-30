@@ -1,22 +1,34 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Habilidades } from "./page/Habilidades";
 import { NavBar } from "./components/NavBar";
-import { AppContextProvider } from "./context/AppContext";
 import { Home } from "./page/Home";
-import { Proyectos } from "./page/Proyectos";
+import { Proyectos } from "./page/Proyectos/Proyectos";
 import { SobreMi } from "./page/SobreMi";
+import { Route, Routes } from "react-router-dom";
+import { MasProyectos } from "./page/Proyectos/MasProyectos";
 
 function App() {
 
   return (
-    <div>
-      <NavBar />
+    <>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/sobremi' element={<SobreMi />} />
-        <Route path='/proyectos' element={<Proyectos />} />
-        <Route path='/*' element={<Navigate to='/' />} />
+        <Route path="/" element={
+          <>
+            <NavBar />
+            <section id="home">
+              <Home />
+              <SobreMi />
+            </section>
+            <section id="proyectos">
+              <Proyectos />
+            </section>
+            <section id="habilidades">
+              <Habilidades />
+            </section>
+          </>
+        } />
+        <Route path="/mas-proyectos" element={<MasProyectos />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

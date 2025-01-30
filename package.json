@@ -11,15 +11,18 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "google-libphonenumber": "^3.2.33",
+    "@fortawesome/fontawesome-free": "^6.7.1",
+    "@nextui-org/react": "^2.6.10",
     "grained": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-phone-number-input": "^3.3.7",
+    "react-phone-number-input": "^3.4.11",
     "react-router-dom": "^6.16.0",
+    "react-scroll": "^1.9.0",
     "sweetalert2": "^11.7.32"
   },
   "devDependencies": {
+    "@types/google-libphonenumber": "^7.4.30",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.0.3",

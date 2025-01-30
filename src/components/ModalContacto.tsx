@@ -1,92 +1,148 @@
-import { AppContext } from "../context/AppContext";
-import React, { useContext } from "react";
+import { Modal, ModalContent, ModalHeader, ModalBody, Input, ModalFooter, Button, Textarea, Form } from '@nextui-org/react';
+import { FC, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
-import ModalValidacion from "./ModalValidacion";
 
-function ModalContacto() {
-    const { setMostrarModal, handleSubmit, form, handleForm, enviarForm, number, setNumber, isValid, handleCloseModal, MostrarModalValidacion, setMostrarModalValidacion } = useContext(AppContext);
+type ModalContactoProps = {
+    isOpen: boolean
+    onOpenChange: () => void
+}
+
+const ModalContacto: FC<ModalContactoProps> = ({ isOpen, onOpenChange }) => {
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [form, setForm] = useState({
+        nombre: "",
+        email: "",
+        telefono: "",
+        mensaje: ""
+    })
+
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsLoading(true);
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            e.currentTarget,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        ).then(() => {
+            setIsLoading(false)
+            Swal.fire({
+                title: 'Enviado',
+                text: 'Su mensaje se ha enviado exitosamente',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2200
+            });
+            setForm({
+                nombre: "",
+                email: "",
+                telefono: "",
+                mensaje: ""
+            });
+            onOpenChange();
+        }, () => {
+            setIsLoading(false)
+            Swal.fire({
+                title: 'Error',
+                text: 'Su mensaje no ha podido ser enviado, por favor intente más tarde',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 2200
+            });
+        });
+    };
+
+
 
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
-            <div className="bg-white p-8 rounded-[13px] shadow-lg max-sm:w-96 border">
-                <div>
-                    <form
-                        ref={enviarForm}
-                        onChange={handleForm}
-                        onSubmit={(e) => {
-                            handleSubmit(e);
-                            setMostrarModal(false);
-                        }}
-                        className="flex flex-col"
-                    >
-                        <h1 className="text-4xl font-bold mb-10 px-[5em] max-sm:text-2xl flex justify-center">Contáctame</h1>
-                        <label className="block mb-4 text-black/50">Nombre y apellido:<span style={{ color: 'red' }}> *</span></label>
-                        <input
-                            className="border rounded py-3 px-4 mb-4"
-                            defaultValue={form.nombre}
-                            name="user_name"
-                            type="text"
-                            placeholder="Sebastian Andres Chico"
-                            required
-                        />
-                        <label className="block mb-4 text-black/50">Numero de contacto:<span style={{ color: 'red' }}> *</span></label>
-                        <div className="mb-4">
-                            <PhoneInput
-                                placeholder="+00 123 4567 890"
-                                className="border rounded py-3 px-4"
-                                value={number}
-                                onChange={setNumber}
-                                name="user_phone"
-                                required
-                            />
-                            {!isValid && number && number.length > 1 && <div className="text-red-600 text-[11px] animate-pulse">Valide su numero telefonico.<span onClick={() => setMostrarModalValidacion(true)} className="material-symbols-outlined text-[13px] cursor-pointer mt-[2px]">help</span></div>}
-                        </div>
-                        <label className="block mb-4 text-black/50">Email:<span style={{ color: 'red' }}> *</span></label>
-                        <input
-                            className="border rounded py-3 px-4 mb-4"
-                            defaultValue={form.email}
-                            name="user_email"
-                            type="email"
-                            placeholder="email@example.com"
-                            required
-                        />
-                        <label className="block mb-4 text-black/50">Mensaje:<span style={{ color: 'red' }}> *</span></label>
-                        <textarea
-                            className="border rounded py-3 px-4 mb-4 resize-none"
-                            defaultValue={form.mensaje}
-                            name="message"
-                            rows="4"
-                            required
-                        ></textarea>
-                        <div className="flex justify-center mt-6 gap-5">
-                            <button
-                                className="text-base font-medium bg-blue-500 text-white p-1.5 px-5 rounded-[20px] ease-in duration-300 hover:bg-[#0cbeff] active:bg-[#0cbeff]"
-                                type="button"
-                                onClick={handleCloseModal}
-                            >
-                                Cerrar
-                            </button>
-                            <button
-                                className={`text-base font-medium p-1.5 px-5 rounded-[20px] ease-in duration-300 ${isValid ? "bg-blue-500 text-white hover:bg-[#0cbeff] active:bg-[#0cbeff]" : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                                    }`}
-                                type="submit"
-                                disabled={!isValid}
-                            >
-                                Enviar
-                            </button>
-                        </div>
-                    </form>
-                    {
-                        MostrarModalValidacion && (
-                            <ModalValidacion />
-                        )
-                    }
-                </div>
-            </div>
-        </div>
+        <Modal isOpen={isOpen} placement="top-center" onOpenChange={onOpenChange}>
+            <Form onSubmit={handleSubmit} validationBehavior="native">
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">Contactame</ModalHeader>
+                            <ModalBody>
+                                <Input
+                                    isRequired
+                                    errorMessage="Por favor ingrese el nombre"
+                                    label="Nombre:"
+                                    labelPlacement="outside"
+                                    placeholder="Ej: Sebastian Chico"
+                                    variant="flat"
+                                    type='text'
+                                    onChange={(e) => setForm({ ...form, nombre: e.target.value })}
+                                    name='user_name'
+                                    value={form.nombre}
+                                />
+                                <Input
+                                    isRequired
+                                    errorMessage="Porfavor ingrese el correo"
+                                    label="Correo electronico:"
+                                    labelPlacement="outside"
+                                    placeholder="Ej: exampleemail@hotmail.com"
+                                    variant="flat"
+                                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                    name='user_email'
+                                    type='email'
+                                />
+                                <label className="text-sm">Numero de contacto:<span style={{ color: '#f31260' }}> *</span></label>
+                                <PhoneInput
+                                    required
+                                    placeholder="+00 123 4567 890"
+                                    className="rounded-2xl bg-[#f4f4f5] py-2 px-4"
+                                    numberInputProps={{
+                                        style: { backgroundColor: '#f4f4f5', border: 'none', outline: 'none', width: '100%' }
+                                    }}
+                                    onChange={(value) => {
+                                        if (value) {
+                                            setForm({ ...form, telefono: value });
+                                        }
+                                    }}
+                                    name="user_phone"
+                                    value={form.telefono}
+                                    type='text'
+                                />
+                                <Textarea
+                                    isRequired
+                                    errorMessage="Por favor ingrese su mensaje"
+                                    label="Mensaje:"
+                                    labelPlacement="outside"
+                                    placeholder=" "
+                                    variant="flat"
+                                    onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
+                                    name='message'
+                                    value={form.mensaje}
+                                    type='textarea'
+                                />
+                            </ModalBody>
+                            <ModalFooter className='flex justify-center'>
+                                <Button color="danger" variant="flat" onPress={() => {
+                                    onClose();
+                                    setForm({
+                                        nombre: "",
+                                        email: "",
+                                        telefono: "",
+                                        mensaje: ""
+                                    });
+                                }}>
+                                    Cerrar
+                                </Button>
+                                <Button color="primary" type="submit" isLoading={isLoading}>
+                                    {isLoading ? 'Enviando...' : 'Enviar'}
+                                </Button>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Form>
+        </Modal>
     );
 }
 
-export default ModalContacto;
+export { ModalContacto };
