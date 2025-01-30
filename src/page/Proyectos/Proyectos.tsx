@@ -33,34 +33,34 @@ const Proyectos: FC = () => {
                                 <div className="flex items-center gap-2 mt-2">
                                     <span className="text-slate-400 font-semibold">FrontEnd:</span>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/react.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/react.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">React</span>
                                     </div>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/typescript.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/typescript.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">TypeScript</span>
                                     </div>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/tailwind.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/tailwind.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">Tailwind CSS</span>
                                     </div>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/nextui.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/nextui.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">NextUI</span>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-2 mt-2">
                                     <span className="text-slate-400 font-semibold">BackEnd:</span>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/c-sharp.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/c-sharp.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">C#</span>
                                     </div>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/aspnetcore.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/aspnetcore.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">ASP .NET Core</span>
                                     </div>
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
-                                        <img src="../../public/media/logos/sqlserver.png" className="w-4" alt="Logo React" />
+                                        <img src="/media/logos/sqlserver.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">SQL Server</span>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@ const MasProyectos: FC = () => {
             <div className="bg-[#1F1F1F] min-h-screen flex items-center justify-center">
                 <div className="flex flex-wrap justify-center gap-12 p-16">
                     <CardProject
-                        imagen="../../../public/media/imgToDo.png"
+                        imagen="/media/imgToDo.png"
                         titulo="LISTA TAREAS"
                         descripcion={`Crud "To do List" que permite Agregar, Editar y Eliminar tareas, almacenándolas con PocketBase como BackEnd.`}
                         linkRepo="https://github.com/sebvsch/CRUDListReactTS"

@@ -8,7 +8,7 @@ const Home: FC = () => {
                 <div className="mt-28">
                     <div className="flex gap-3 items-center justify-center">
                         <div>
-                            <img src="../../public/media/perfil2.png" className="w-20 shadow-lg rounded-full"></img>
+                            <img src="/media/perfil2.png" className="w-20 shadow-lg rounded-full"></img>
                         </div>
                         <div>
                             <div className="items-center text-3xl font-medium text-white">

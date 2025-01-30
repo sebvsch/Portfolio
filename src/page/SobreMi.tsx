@@ -45,28 +45,28 @@ const SobreMi: FC = () => {
             <h3 className="text-sm font-normal mt-2">Herramientas utilizadas:</h3>
             <div className="flex gap-2 mt-1">
               <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-500/10 shadow-lg">
-                <img src="../../public/media/logos/typescript.png" className="w-4" alt="Logo TypeScript" />
+                <img src="/media/logos/typescript.png" className="w-4" alt="Logo TypeScript" />
                 <span className="text-xs">TypeScript</span>
               </div>
               <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10  shadow-lg">
-                <img src="../../public/media/logos/react.png" className="w-4" alt="Logo React" />
+                <img src="/media/logos/react.png" className="w-4" alt="Logo React" />
                 <span className="text-xs">React</span>
               </div>
               <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-orange-500/10  shadow-lg">
-                <img src="../../public/media/logos/git.png" className="w-4" alt="Logo Git" />
+                <img src="/media/logos/git.png" className="w-4" alt="Logo Git" />
                 <span className="text-xs">Git</span>
               </div>
 
               <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-purple-500/10  shadow-lg">
-                <img src="../../public/media/logos/bootstrap.png" className="w-4" alt="Logo Bootstrap" />
+                <img src="/media/logos/bootstrap.png" className="w-4" alt="Logo Bootstrap" />
                 <span className="text-xs">Bootstrap</span>
               </div>
               <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-orange-500/10  shadow-lg">
-                <img src="../../public/media/logos/postman.png" className="w-4" alt="Logo Postman" />
+                <img src="/media/logos/postman.png" className="w-4" alt="Logo Postman" />
                 <span className="text-xs">Postman</span>
               </div>
               <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-black-500/10  shadow-lg">
-                <img src="../../public/media/logos/figma.png" className="w-4" alt="Logo Postman" />
+                <img src="/media/logos/figma.png" className="w-4" alt="Logo Postman" />
                 <span className="text-xs">Figma</span>
               </div>
             </div>
