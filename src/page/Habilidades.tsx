@@ -20,16 +20,16 @@ const Habilidades: FC = () => {
                                 <img className="w-11" src="/media/logos/typescript.png" alt="Logo TypeScript" title="TypeScript" />
                                 <img className="w-11" src="/media/logos/bootstrap.png" alt="Logo Bootstrap" title="Bootstrap" />
                                 <img className="w-11" src="/media/logos/tailwind.png" alt="Logo TailwindCSS" title="TailwindCSS" />
-                                <img className="w-11" src="/media/logos/nextui.png" alt="Logo TailwindCSS" title="TailwindCSS" />
-                                <img className="w-11" src="/media/logos/azure.png" alt="Logo Figma" title="Azure" />
-                                <img className="w-11" src="/media/logos/git.png" alt="Logo Git" title="Figma" />
-                                <img className="w-11" src="/media/logos/github.png" alt="Logo Git" title="Figma" />
+                                <img className="w-11" src="/media/logos/nextui.png" alt="Logo NextUI" title="NextUI" />
+                                <img className="w-11" src="/media/logos/azure.png" alt="Logo Azure" title="Azure" />
+                                <img className="w-11" src="/media/logos/git.png" alt="Logo Git" title="Git" />
+                                <img className="w-11" src="/media/logos/github.png" alt="Logo GitHub" title="GitHub" />
                                 <img className="w-11" src="/media/logos/figma.png" alt="Logo Figma" title="Figma" />
-                                <img className="w-11" src="/media/logos/c-sharp.png" alt="Logo Figma" title="Figma" />
-                                <img className="w-11" src="/media/logos/aspnetcore.png" alt="Logo Figma" title="Figma" />
-                                <img className="w-11" src="/media/logos/sqlserver.png" alt="Logo Figma" title="Figma" />
-                                <img className="w-11" src="/media/logos/adobe-photoshop.png" alt="Logo Figma" title="Figma" />
-                                <img className="w-11" src="/media/logos/adobe-illustrator.png" alt="Logo Figma" title="Figma" />
+                                <img className="w-11" src="/media/logos/c-sharp.png" alt="Logo C-Sharp" title="C-Sharp" />
+                                <img className="w-11" src="/media/logos/aspnetcore.png" alt="Logo ASP .Net Core" title="ASP .Net Core" />
+                                <img className="w-11" src="/media/logos/sqlserver.png" alt="Logo SQLServer" title="SQLServer" />
+                                <img className="w-11" src="/media/logos/adobe-photoshop.png" alt="Logo Photoshop" title="Photoshop" />
+                                <img className="w-11" src="/media/logos/adobe-illustrator.png" alt="Logo Illustrator" title="Illustrator" />
                             </div>
                         </div>
                     </div>
