@@ -12,7 +12,6 @@ const SobreMi: FC = () => {
                 <h1>Sobre mi</h1>
               </div>
               <p className="text-white text-sm mt-3">
-
                 23 años, estudiante de Ingeniería de Sistemas en Cartagena,
                 diseñador freelance y desarrollador web fullstack.
                 Enfocado en crecer personal y profesionalmente mientras
