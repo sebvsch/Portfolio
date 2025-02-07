@@ -15,12 +15,22 @@ const Proyectos: FC = () => {
                             </div>
                             <div>
                                 <h2 className="text-white text-base mb-2">Proyectos recientes:</h2>
-                                <div className="flex items-center gap-4  mb-2">
-                                    <h3 className="text-slate-400 text-4xl font-bold">Gestor Administrativo:</h3>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <h3 className="text-slate-400 text-3xl font-bold">Gestor Administrativo:</h3>
                                     <a href="https://github.com/sebvsch/GestorAuth" target="_blank" title="Se direccionara a otra pagina">
                                         <button className="flex text-base text-gray-bg bg-white font-bold gap-1 items-center rounded-md p-2 hover:bg-blue-200 hover:text-blue-700 duration-300 hover:shadow-xl">
-                                            <i className="fa-solid fa-link text-sm"></i>
-                                            <span>Code</span>
+                                            <i className="fa-brands fa-github"></i>
+                                            <span>Repo</span>
+                                        </button>
+                                    </a>
+                                    <a href="https://gestor-auth.vercel.app" target="_blank" title="Se direccionara a otra pagina">
+                                        <button className="flex text-base text-white bg-blue-500 font-bold gap-1 items-center rounded-xl p-2 hover:bg-blue-400 hover:text-blue-900 duration-300 hover:shadow-xl">
+                                            <span>Front</span>
+                                        </button>
+                                    </a>
+                                    <a href="https://gestorauth.up.railway.app" target="_blank" title="Se direccionara a otra pagina">
+                                        <button className="flex text-base text-white bg-orange-500 font-bold gap-1 items-center rounded-xl p-2 hover:bg-orange-600 hover:text-orange-900 duration-300 hover:shadow-xl">
+                                            <span>Back</span>
                                         </button>
                                     </a>
                                 </div>
@@ -62,6 +72,18 @@ const Proyectos: FC = () => {
                                     <div className="flex gap-1 p-2 rounded-xl border-white border border-opacity-10 bg-blue-300/10 shadow-lg">
                                         <img src="/media/logos/sqlserver.png" className="w-4" alt="Logo React" />
                                         <span className="text-xs">SQL Server</span>
+                                    </div>
+                                </div>
+                                <div className="border border-yellow-400/40 bg-yellow-400/5 rounded-md mt-2 text-xs p-1">
+                                    <div>
+                                        <p>Al registrarte, se te asignará automáticamente el rol <span className="font-bold">"Usuario Nuevo"</span>, el cual <span className="font-bold">no tiene acceso a prácticamente ninguna funcionalidad.</span></p>
+                                    </div>
+                                    <div className="my-3">
+                                        <p>Para obtener una mejor experiencia y acceso completo, inicia sesión con el siguiente usuario de prueba:</p>
+                                    </div>
+                                    <div>
+                                        <div><span className="font-bold">Usuario: </span>userprueba</div>
+                                        <div><span className="font-bold">Contraseña: </span>userprueba</div>
                                     </div>
                                 </div>
                             </div>
