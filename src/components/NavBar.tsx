@@ -19,7 +19,7 @@ const NavBar: FC = () => {
             <a
               href={CV}
               className="hover:bg-orange-500/75 hover:text-orange-100 bg-orange-500/30 rounded-full py-2 px-5 ease-in duration-200"
-              download="Sebastian Chico - Front-end Developer"
+              download="Sebastian Chico - Fullstack Developer"
               rel="noreferrer"
               target="_blank"
             >
