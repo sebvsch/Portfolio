@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ModalContacto } from "./ModalContacto";
 import { useDisclosure } from "@nextui-org/react";
-import CV from "../assets/CV - Sebastian Chico.pdf";
+import CV from "../assets/CV - Sebastian A. Chico.pdf";
 import { Link } from "react-scroll";
 
 const NavBar: FC = () => {
